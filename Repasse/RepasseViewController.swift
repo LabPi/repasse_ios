@@ -19,7 +19,9 @@ class RepasseViewController: UIViewController, UITableViewDelegate, UITableViewD
     var arrRes = [[String:AnyObject]]()
     var proponente:Proponente!
     @IBOutlet weak var tx_endereco: UILabel!
-    
+    @IBOutlet weak var tx_respons_proponente: UILabel!
+    @IBOutlet weak var tx_carga_proponente: UILabel!
+    @IBOutlet weak var tx_cidade_estado: UILabel!
     @IBOutlet weak var tx_proponente: UILabel!
     @IBOutlet weak var tx_administracao: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -30,9 +32,13 @@ class RepasseViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         super.viewDidLoad()
         
-        tx_proponente.text = proponenteSelecionado.proponente
-        tx_administracao.text = proponenteSelecionado.administracao
-    
+        self.tx_endereco.text = ""
+        self.tx_proponente.text = ""
+        self.tx_administracao.text = ""
+        self.tx_cidade_estado.text = ""
+        self.tx_respons_proponente.text = ""
+        self.tx_carga_proponente.text = ""
+        
         self.title = "Convênios"
         
         getProponente()
@@ -137,8 +143,12 @@ class RepasseViewController: UIViewController, UITableViewDelegate, UITableViewD
                     cargo_respons_proponente:j["cargo_respons_proponente"].string!,
                     respons_proponente:j["respons_proponente"].string!)
                 
-                
                 self.tx_endereco.text = self.proponente.endereco
+                self.tx_proponente.text = self.proponente.proponente
+                self.tx_administracao.text = "Administração " + self.proponente.administracao
+                self.tx_cidade_estado.text = self.proponente.cidade + " - " + self.proponente.estado
+                self.tx_respons_proponente.text = self.proponente.respons_proponente
+                self.tx_carga_proponente.text = self.proponente.cargo_respons_proponente
                 
                 spiningAlert.hide(true)
               
