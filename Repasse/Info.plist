@@ -24,8 +24,8 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>O aplicativo precisa de sua localização para realizar as denúncias e para você verificar infrações próximas.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O aplicativo precisa de sua localização para pesquisar as instituições próximas de você que receberam repasses financeiros da união.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -45,10 +45,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

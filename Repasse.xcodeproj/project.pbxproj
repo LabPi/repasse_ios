@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D75C5FF1F8CAB915A1E07D7A /* Pods_Repasse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1401E05308036F9CABF863A4 /* Pods_Repasse.framework */; };
+		E60A299D1CBF0C2300275968 /* Proponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60A299C1CBF0C2300275968 /* Proponente.swift */; };
 		E63DE4161CBD432F00FC36C2 /* Repasse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63DE4151CBD432F00FC36C2 /* Repasse.swift */; };
 		E63DE41A1CBD56F700FC36C2 /* DetalheTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63DE4191CBD56F700FC36C2 /* DetalheTableViewController.swift */; };
 		E63DE41C1CBD6EFD00FC36C2 /* RepasseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63DE41B1CBD6EFD00FC36C2 /* RepasseViewController.swift */; };
@@ -16,7 +17,7 @@
 		E640F3181CBAE56600345894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E640F3161CBAE56600345894 /* Main.storyboard */; };
 		E640F31A1CBAE56600345894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E640F3191CBAE56600345894 /* Assets.xcassets */; };
 		E640F31D1CBAE56600345894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E640F31B1CBAE56600345894 /* LaunchScreen.storyboard */; };
-		E642EB301CBC71FE00A87030 /* Proponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642EB2F1CBC71FE00A87030 /* Proponente.swift */; };
+		E642EB301CBC71FE00A87030 /* AggregateProponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642EB2F1CBC71FE00A87030 /* AggregateProponente.swift */; };
 		E642EB321CBC7AF700A87030 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E642EB311CBC7AF700A87030 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		1401E05308036F9CABF863A4 /* Pods_Repasse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Repasse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1A9E6F5FE0858FC737F452 /* Pods-Repasse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Repasse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Repasse/Pods-Repasse.release.xcconfig"; sourceTree = "<group>"; };
 		D92354F5C0296B801A876EF4 /* Pods-Repasse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Repasse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Repasse/Pods-Repasse.debug.xcconfig"; sourceTree = "<group>"; };
+		E60A299C1CBF0C2300275968 /* Proponente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proponente.swift; sourceTree = "<group>"; };
 		E63DE4151CBD432F00FC36C2 /* Repasse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repasse.swift; sourceTree = "<group>"; };
 		E63DE4191CBD56F700FC36C2 /* DetalheTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheTableViewController.swift; sourceTree = "<group>"; };
 		E63DE41B1CBD6EFD00FC36C2 /* RepasseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepasseViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		E640F3191CBAE56600345894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E640F31C1CBAE56600345894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E640F31E1CBAE56600345894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E642EB2F1CBC71FE00A87030 /* Proponente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proponente.swift; sourceTree = "<group>"; };
+		E642EB2F1CBC71FE00A87030 /* AggregateProponente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AggregateProponente.swift; sourceTree = "<group>"; };
 		E642EB311CBC7AF700A87030 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -96,10 +98,11 @@
 				E640F3191CBAE56600345894 /* Assets.xcassets */,
 				E640F31B1CBAE56600345894 /* LaunchScreen.storyboard */,
 				E640F31E1CBAE56600345894 /* Info.plist */,
-				E642EB2F1CBC71FE00A87030 /* Proponente.swift */,
+				E642EB2F1CBC71FE00A87030 /* AggregateProponente.swift */,
 				E63DE4151CBD432F00FC36C2 /* Repasse.swift */,
 				E63DE4191CBD56F700FC36C2 /* DetalheTableViewController.swift */,
 				E63DE41B1CBD6EFD00FC36C2 /* RepasseViewController.swift */,
+				E60A299C1CBF0C2300275968 /* Proponente.swift */,
 			);
 			path = Repasse;
 			sourceTree = "<group>";
@@ -231,10 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E642EB301CBC71FE00A87030 /* Proponente.swift in Sources */,
+				E642EB301CBC71FE00A87030 /* AggregateProponente.swift in Sources */,
 				E640F3151CBAE56600345894 /* ViewController.swift in Sources */,
 				E63DE41A1CBD56F700FC36C2 /* DetalheTableViewController.swift in Sources */,
 				E640F3131CBAE56600345894 /* AppDelegate.swift in Sources */,
+				E60A299D1CBF0C2300275968 /* Proponente.swift in Sources */,
 				E63DE41C1CBD6EFD00FC36C2 /* RepasseViewController.swift in Sources */,
 				E63DE4161CBD432F00FC36C2 /* Repasse.swift in Sources */,
 			);

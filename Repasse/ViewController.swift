@@ -11,11 +11,12 @@ import Alamofire
 import SwiftyJSON
 import MapKit
 import CoreLocation
+import MBProgressHUD
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var Mapa: MKMapView!
-    var proponentes:[Proponente] = [Proponente]()
+    var proponentes:[AggregateProponente] = [AggregateProponente]()
     var arrRes = [[String:AnyObject]]()
     
     var locationManager: CLLocationManager!
@@ -49,24 +50,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == annotationView.rightCalloutAccessoryView {
-            let proponente:Proponente = annotationView.annotation as! Proponente
+            let proponente:AggregateProponente = annotationView.annotation as! AggregateProponente
             proponenteSelecionado = proponente
             performSegueWithIdentifier("repasse", sender: nil)
         }
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?  {
-        if let annotation = annotation as? Proponente {
+        if let annotation = annotation as? AggregateProponente {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
-                as? MKPinAnnotationView { // 2
+                as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
-                view.calloutOffset = CGPoint(x: -5, y: 5)
+                // view.calloutOffset = CGPoint(x: -5, y: 5)
                 let btn = UIButton(type: .DetailDisclosure)
                 view.rightCalloutAccessoryView = btn
             }
@@ -85,8 +86,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
-    
     func recuperaProponentes() {
+        
+        let spiningAlert = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
         let parameters = ["latitude": self.location.coordinate.latitude,"longitude":self.location.coordinate.longitude]
         
@@ -97,7 +99,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     self.arrRes = resData as! [[String:AnyObject]]
                 }
                 for a in self.arrRes {
-                    let proponente:Proponente = Proponente(
+                    let proponente:AggregateProponente = AggregateProponente(
                         id_proponente:a["id_proponente"] as! String,
                         proponente:a["proponente"] as! String,
                         coordinate:CLLocationCoordinate2D(latitude: a["latitude"] as! Double, longitude: a["longitude"] as! Double),
@@ -107,7 +109,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 }
                 
                 self.updateMapa()
+                spiningAlert.hide(true)
         }
+        
     }
 
 }

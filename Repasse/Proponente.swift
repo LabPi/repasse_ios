@@ -2,42 +2,38 @@
 //  Proponente.swift
 //  Repasse
 //
-//  Created by Ricardo Gayer on 4/11/16.
+//  Created by Ricardo Gayer on 4/13/16.
 //  Copyright © 2016 Ricardo Gayer. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-
-class Proponente: NSObject, MKAnnotation {
+class Proponente: NSObject {
     
-    let id_proponente: String
-    let proponente: String
-    let coordinate: CLLocationCoordinate2D
-    let administracao: String
-    let total: Double
+    let id_proponente:String
+    let proponente:String
+    let endereco:String
+    let bairro:String
+    let cidade:String
+    let estado:String
+    let cep:String
+    let administracao:String
+    let respons_proponente:String
+    let cargo_respons_proponente:String
     
-    
-    init(id_proponente:String, proponente:String, coordinate:CLLocationCoordinate2D, administracao:String, total:Double) {
-
+    init(id_proponente:String, proponente:String, endereco:String, bairro:String, cidade:String,
+         estado:String, cep:String, administracao:String, cargo_respons_proponente:String, respons_proponente:String) {
         self.id_proponente = id_proponente
         self.proponente = proponente
-        self.coordinate = coordinate
+        self.endereco = endereco
+        self.bairro = bairro
+        self.cidade = cidade
+        self.estado = estado
+        self.cep = cep
         self.administracao = administracao
-        self.total = total
-        super.init()
+        self.respons_proponente = respons_proponente
+        self.cargo_respons_proponente = cargo_respons_proponente
+                super.init()
     }
-    
-    var title: String? {
-        let fmt = NSNumberFormatter()
-        fmt.numberStyle = .CurrencyStyle
-        fmt.locale = NSLocale(localeIdentifier: "pt_BR")
-        return fmt.stringFromNumber(total)
-    }
-    
-    var subtitle: String? {
-        return proponente
-    }
-    
+
 }

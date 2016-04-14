@@ -17,6 +17,9 @@ class DetalheTableViewController: UITableViewController {
     @IBOutlet weak var tx_assinatura: UILabel!
     @IBOutlet weak var tx_valor: UILabel!
     
+    @IBOutlet weak var tx_justificativa: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -29,6 +32,8 @@ class DetalheTableViewController: UITableViewController {
 
         tx_assinatura.text = dateString
         tx_valor.text = detalhe.valorReal
+        
+        tx_justificativa.text = detalhe.justificativa
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -36,7 +41,7 @@ class DetalheTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
 
 }
